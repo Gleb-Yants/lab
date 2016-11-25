@@ -41,19 +41,6 @@ public class UserDaoImpl implements UserDao {
 
     }
 
-    @Override
-    public List<User> findAll() {
-
-        Map<String, Object> params = new HashMap<String, Object>();
-
-        String sql = "SELECT * FROM users";
-
-        List<User> result = namedParameterJdbcTemplate.query(sql, params, new UserMapper());
-
-        return result;
-
-    }
-
     private static final class UserMapper implements RowMapper<User> {
 
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
