@@ -17,11 +17,8 @@ public class H2SimpleTest {
 
         private EmbeddedDatabase db;
 
-        UserDao userDao;
-
         @Before
         public void setUp() {
-            //db = new EmbeddedDatabaseBuilder().addDefaultScripts().build();
             db = new EmbeddedDatabaseBuilder()
                     .setType(EmbeddedDatabaseType.H2)
                     .addScript("db.sql/create-db.sql")
